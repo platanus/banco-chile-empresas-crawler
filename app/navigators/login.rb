@@ -6,13 +6,12 @@ class Login < Crabfarm::BaseNavigator
     company_digit = params[:company_rut].slice(params[:company_rut].length-1)
     owner_rut = params[:rut].chop()
     owner_digit = params[:rut].slice(params[:rut].length-1)
-    browser.css("[name=rut_emp]").set(company_rut)
-    browser.css("[name=dv_emp]").set(company_digit)
-    browser.css("[name=rut_apo]").set(owner_rut)
-    browser.css("[name=dv_apo]").set(owner_digit)
-    browser.css("[name=pin]").set(params[:password])
-    browser.css(".btn_amarillodegrade").click()
-    reduce_with_defaults
+    browser.search("[name=rut_emp]").set(company_rut)
+    browser.search("[name=dv_emp]").set(company_digit)
+    browser.search("[name=rut_apo]").set(owner_rut)
+    browser.search("[name=dv_apo]").set(owner_digit)
+    browser.search("[name=pin]").set(params[:password])
+    browser.search(".btn_amarillodegrade").click()
   end
 
 end
