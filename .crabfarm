@@ -1,5 +1,5 @@
 host: http://api.crabfarm.io
-
+remote: platanus/bancochileempresas
 files:
 - Crabfile
 - Gemfile
