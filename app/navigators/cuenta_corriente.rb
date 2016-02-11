@@ -8,7 +8,8 @@ class CuentaCorriente < Crabfarm::BaseNavigator
     browser.goto frame: :top
     browser.goto frame: "[name=CONTENT]"
     browser.search("#btnSeleccionarCuenta").click()
-    reduce_with_defaults
+    browser.search('table#cartolaMovimientos').wait(:present).wait { |b| b.search('tr').count > 2 }
+    reduce_with_defaults(browser.search('table#cartolaMovimientos').wait(:present,timeout:30.0))
   end
 
 end

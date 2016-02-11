@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CuentaCorrienteReducer, reducing: 'cuenta_corriente', live:true do
+describe CuentaCorrienteReducer, reducing:'conta', live:true do
 
   it "should have a 'transactions' array" do
     expect(reducer.transactions).to be_instance_of(Array)

@@ -12,6 +12,10 @@ class Login < Crabfarm::BaseNavigator
     browser.search("[name=dv_apo]").set(owner_digit)
     browser.search("[name=pin]").set(params[:password])
     browser.search(".btn_amarillodegrade").click()
+    for i in 0..1000
+      break if browser.url.include? 'privado'
+      sleep 0.005
+    end
   end
 
 end
