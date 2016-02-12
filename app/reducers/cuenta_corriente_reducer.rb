@@ -7,7 +7,6 @@ class CuentaCorrienteReducer < Crabfarm::BaseReducer
     rows = self.search('tr')
     rows = rows.to_a
     rows.shift
-    rows = rows.first
     rows.each do |r|
       t = Transaction.new()
       t.amount = r.search("td:nth-child(5)").text.gsub(/[\.]/,"")
